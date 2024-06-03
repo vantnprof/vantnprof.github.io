@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Abouts on CIST</title>
+    <link>https://vantnprof.github.io/about/</link>
+    <description>Recent content in Abouts on CIST</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Jan 2024 16:18:38 -0600</lastBuildDate><atom:link href="https://vantnprof.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://vantnprof.github.io/about/aboutme/</link>
+      <pubDate>Mon, 15 Jan 2024 16:18:38 -0600</pubDate>
+      
+      <guid>https://vantnprof.github.io/about/aboutme/</guid>
+      <description>Education backgrounds 2023-current
+Ph.D. student in the Electrical Engineering program at the University of Texas at San Antonio (UTSA), US.
+2018-2022
+B.S. Honor program in Computer Science at Vietnam National University, Ho Chi Minh City - University of Information Technology(VNUHCM-UIT).
+Publications Trien Thai, T. Nguyen, Tuan Nguyen. 2022. Phương pháp xác định vị trí tàu biển gặp nạn (English title: Detecting the ship in distress based on optical satellite images and automatic identity system signal).</description>
+      <content:encoded><![CDATA[<h2 id="education-backgrounds">Education backgrounds</h2>
+<hr>
+<p><strong>2023-current</strong></p>
+<p>Ph.D. student in the Electrical Engineering program at the University of Texas at San Antonio (UTSA), US.</p>
+<p><strong>2018-2022</strong></p>
+<p>B.S. Honor program in Computer Science at Vietnam National University, Ho Chi Minh City - University of Information Technology(VNUHCM-UIT).</p>
+<h2 id="publications">Publications</h2>
+<hr>
+<p>Trien Thai, <strong>T. Nguyen</strong>, Tuan Nguyen. 2022. Phương pháp xác định vị trí tàu biển gặp nạn (English title: Detecting the ship in distress based on optical satellite images and automatic identity system signal). Submitted Oct 24, 2022</p>
+<p>M. Tran, T. Pham, <strong>T. Nguyen</strong>, T. Do and T. N. Duc, “A robust framework for mathematical formula detection,” 2021 International Conference on Multimedia Analysis and Pattern Recognition (MAPR), 2021, pp. 1-6, doi: 10.1109/MAPR53640.2021.9585197.</p>
+<h2 id="work-experiences">Work experiences</h2>
+<hr>
+<p><strong>2023-current</strong></p>
+<p>Graduate research assisant (GRA) at University of Texas at San Antonio (UTSA).</p>
+<p><strong>2022-2023</strong></p>
+<p>AI research engineer at Viettel High Technology Industries Corporation (VHT), Vietnam.</p>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<hr>
+<ul>
+<li>
+<p>In Oct 2020, gained the consolation prize at the AI CAMERA INSPECTION CHALLENGE organized by The Training Center of Saigon Hi-tech Park (SHTP Training), Vietnam.</p>
+</li>
+<li>
+<p>In 2019, Consolation prize in the Calculus at the National Mathematical Olympiad Competition organized by the Vietnam Mathematical Association.</p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

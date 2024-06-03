@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on CIST</title>
+    <link>https://vantnprof.github.io/project/</link>
+    <description>Recent content in Projects on CIST</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Jan 2024 22:29:58 -0600</lastBuildDate><atom:link href="https://vantnprof.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project</title>
+      <link>https://vantnprof.github.io/project/updated_2024/</link>
+      <pubDate>Mon, 15 Jan 2024 22:29:58 -0600</pubDate>
+      
+      <guid>https://vantnprof.github.io/project/updated_2024/</guid>
+      <description>2022 Evaluate some deep learning methods for infographic visual question answering. (Bachelor&amp;rsquo;s thesis) code | report 2021 Estimate solutions of system of non-linear equations using Newton Raphson.
+code | report Instance search in image using DEep Local Features (DELF) code | report 2020 Detect failing bottle caps from industrial camera stream. code | report Object detection implementation using Yolo and Capsule Network.
+code | report Comparing compression algorithm on text data.</description>
+      <content:encoded><![CDATA[<h3 id="2022">2022</h3>
+<hr>
+<ul>
+<li><strong>Evaluate some deep learning methods for infographic visual question answering.</strong> (Bachelor&rsquo;s thesis) <br>
+<em><a href="https://github.com/tiennvcs/docvqa">code</a> | <a href="">report</a></em></li>
+</ul>
+<h3 id="2021">2021</h3>
+<hr>
+<ul>
+<li><strong>Estimate solutions of system of non-linear equations using Newton Raphson.</strong><br>
+<em><a href="https://github.com/tiennvcs/NewtonRaphson_Non-linearSystem">code</a> | <a href="">report</a></em></li>
+<li><strong>Instance search in image using DEep Local Features (DELF)</strong> <br>
+<em><a href="https://github.com/tiennvcs/instance_search">code</a>     | <a href="">report</a></em></li>
+</ul>
+<h3 id="2020">2020</h3>
+<hr>
+<ul>
+<li><strong>Detect failing bottle caps from industrial camera stream.</strong> <br>
+<em><a href="https://github.com/tiennvcs/SHTP_AI_cameraChallenge">code</a> | <a href="">report</a></em></li>
+<li><strong>Object detection implementation using Yolo and Capsule Network.</strong><br>
+<em><a href="https://github.com/tiennvcs/ObjectDetection-Capsnet">code</a> | <a href="">report</a></em></li>
+<li><strong>Comparing compression algorithm on text data.</strong> <br>
+<em><a href="https://github.com/tiennvcs/CompressAlgorithm">code</a> | <a href="">report</a></em></li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
