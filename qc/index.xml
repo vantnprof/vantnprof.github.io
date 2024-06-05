@@ -47,7 +47,7 @@ It means the eigenvectors of \(A\) are: \(q_0 = \begin{bmatrix}\frac{1}{\sqrt{2}
 <p>To encode \(\lambda_0, \lambda_1\), we need to use \(n_c=2\) qubits since the maximum eigenvalue is 3 and the ratio between \(\lambda_1\) and \(\lambda_0\) is \(3/1 = 4\). It means we present these value in a Hilbert space with basics \(\ket{00}, \ket{01}, \ket{10}, \ket{11}\). This encoding is done in a register, which is called as clock-register, or c-register for short. Luckily, they are all integers and the ratio is also integer. This means the representation of those values in quantum circuit are exact itself, i.e., \(\tilde{\lambda_0} = 1, \tilde{\lambda_1} = 3\), or in other words \(\ket{\tilde{\lambda_0}}=\ket{01}\) and \(\ket{\tilde{\lambda_1}}=\ket{11}\). This give us a perfect encoding with \(n_c=2\). Therefore, \(t\) would be chosen to be \(\frac{\pi}{2}\) due to \(\tilde{\lambda_j} = 2^{n_c}\lambda_j t / 2\pi\).</p>
 <p>Also, we have to spend 1 more qubit to encode \(b = \begin{bmatrix}\frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}}\end{bmatrix}^T\).</p>
 <p>Therefore, the total number of qubits is \(n + n_c + 1 = 1 + 2 + 1 = 4\). Noticeably, in this calculation, besides c-register and input register for \(b\), we also need anciila qubit (which is already counted) to perform rotation and partial measurement.</p>
-<h3 id="matrix-encoding-u--eiat">Matrix encoding \(U = e^{iAt}\)</h3>
+<h3 id="matrix-encoding-eiat">Matrix encoding \(e^{iAt}\)</h3>
 <p>We need to find two matrix \(U^2, U\) with \(U=e^{iAt}\). From the previous analysis, we have: \(A = Q \Lambda Q^T\), or \(\Lambda = Q^T A Q\). Supposedly, \(U = Q U_{\text{diag}} Q^{\dagger}\), then we have:
 $$
 U_{\text{diag}} = \begin{bmatrix}
@@ -111,8 +111,28 @@ It means, to implement \(U\) into quantum circuit, we have to find/define a tupl
 \frac{1}{2}(i-1) = e^{i(\gamma + \phi + \lambda)}\cos{(\theta/2)} \\
 \end{cases}
 $$
-So now we have \(4\) euqations and \(4\) unknowns!</p>
-]]></content:encoded>
+So now we have \(4\) equations of \(4\) unknowns. By solving it, we get the paramters are \((0, \pi/2, -\pi/2, \pi)\). In the same way, to implement \(U^2\), four parameters \((\theta, \phi, \lambda, \gamma)\) need to validated. More particular, they are \((\pi, \pi, 0, 0)\).</p>
+<p>It is not done yet! For the Inverse quantum phase estimation, we also need to implement two unitary operators \(U^{-1}\), and \((U^{2})^{-1}\). Lucklily, the \(U^2U^2 = I\), or \((U^2)^{-1} = U^2\), so we can use the exact parameters of \(U^2\) to implement \(U^{-2}\). About \(U^{-1}\), we can not use the same set of parameters of \(U\) due to \(UU \neq I\), in particular, \(U^{-1} = \frac{1}{2}\begin{bmatrix}-i-1 &amp; 1-i \\ 1-i &amp; -i-1 \end{bmatrix}\). Therefore the tuple of parameters we have to find to rerpesent \(U^{-1}\) is \((\pi/2, \pi/2, -\pi/2, -3\pi/4)\).</p>
+<p>We are not done yet! The quantum operations would be deployed is controlled-rotation, \(CU\), and \(CU^2\). A controlled version of \(U\) is defined by \(CU = I \otimes \ket{0}\bra{0} + U\otimes\ket{1}\bra{1}\) which means that if the controlled qubit is \(\ket{1}\), then the operator \(U\) applies to target qubits, otherwise nothing happend.</p>
+<h3 id="controlled-rotation-on-ancilla-qubit">Controlled rotation on ancilla qubit</h3>
+<p>To amplify the probability of obtaining \(\ket{1}\), the transformation on ancilla qubit, which turns \(\ket{0} \rightarrow \sqrt{1 - \frac{1}{\tilde{\lambda_j}^2}}\ket{0} + \frac{1}{\tilde{\lambda_j}}\ket{1} \). This is done by \(RY(\theta)\) rotation:
+$$
+RY(\theta) = \begin{bmatrix}
+\cos{(\theta/2)} &amp; -\sin{(\theta/2)} \\
+\sin{(\theta/2)} &amp; \cos{(\theta/2)}
+\end{bmatrix}
+$$
+with \(\theta = 2\arcsin{(\frac{1}{\tilde{\lambda_j}})}\). Since \(\theta\) depends on \(\tilde{\lambda_j}\), so we can define \(\theta\) as a function of \(\tilde{\lambda_j}\): \(\theta(\tilde{\lambda_j}) = 2 \arcsin{(\frac{1}{\tilde{\lambda_j}})}\). Therefore,
+$$
+\begin{cases}
+\theta(\tilde{\lambda_0}) = 2 \arcsin{(\frac{1}{\tilde{\lambda_0}})} = 2\arcsin{\frac{1}{1}} = \pi\\
+\theta(\tilde{\lambda_1}) = 2 \arcsin{(\frac{1}{\tilde{\lambda_1}})} = 2\arcsin{\frac{1}{3}} = 0.67967\\
+\end{cases}
+$$</p>
+<p>Similar to the controlled-U operators, we need to implement controlled-rotation which apply the rotation \(RY(\theta)\) on ancilla qubit as the target based on the controlled qubit, which is the clock-register.</p>
+<h2 id="qiskit-implementation">Qiskit implementation</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span></code></pre></div>]]></content:encoded>
     </item>
     
     <item>
